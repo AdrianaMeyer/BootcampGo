@@ -12,7 +12,7 @@ type Aluno struct {
 
 }
 
-func detalhes(aluno Aluno) {
+func (aluno Aluno) detalhes() {
 	fmt.Println("--------- Dados do Aluno ------- \t")
 	fmt.Println("Nome:", aluno.nome)
 	fmt.Println("Sobrenome:", aluno.sobrenome)  
@@ -36,6 +36,6 @@ func main() {
 		dataAdmissao: "01/02/2012",
 	}
 
-	detalhes(aluno1)
-	detalhes(aluno2)
+	aluno1.detalhes()
+	aluno2.detalhes()
 }
