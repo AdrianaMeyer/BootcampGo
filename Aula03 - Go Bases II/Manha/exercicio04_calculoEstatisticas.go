@@ -48,7 +48,7 @@ func calculaMin(valores ...float64) float64 {
 }
 
 func alertaErro(valores ...float64) float64 {
-	return 0
+	return 0.0
 }
 
 func operacao(operacao string) (func(valores ...float64) float64, error) {
@@ -70,16 +70,19 @@ func main() {
 	maxFunc, err := operacao(Max)
 	medFunc, err := operacao(Med)
 	minFunc, err := operacao(Min)
+	errFunc, err := operacao("invalido")
 
 	maxValor := maxFunc(2, 4, 7, 6, 9, 23, 15, 8, 1)
 	medValor := medFunc(2, 4, 7, 6, 9, 23, 15, 8, 1)
 	minValor := minFunc(2, 4, 7, 6, 9, 23, 15, 8, 1)
+	errValor := errFunc(2, 4, 7, 6, 9, 23, 15, 8, 1)
 
 	if err != nil {
-		fmt.Println("Erro:", err)
-	} else {
-		fmt.Println("Maior valor:", maxValor)
-		fmt.Printf("Média: %.2f\n", medValor)
-		fmt.Println("Menor valor:", minValor)
-	}
+		fmt.Println("Erro:", errValor, err)
+	} 
+
+	fmt.Println("Maior valor:", maxValor)
+	fmt.Printf("Média: %.2f\n", medValor)
+	fmt.Println("Menor valor:", minValor)
+	
 }

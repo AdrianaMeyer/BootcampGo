@@ -34,7 +34,7 @@ func quantComidaTarantula(quantAnimal float64) float64 {
 }
 
 func alertaErro(quantAnimal float64) float64 {
-	return 0
+	return 0.0
 }
 
 func Animal(tipoAnimal string) (func(quantAnimal float64) float64, error) {
@@ -48,7 +48,7 @@ func Animal(tipoAnimal string) (func(quantAnimal float64) float64, error) {
 	case "tarantula": 
 		return quantComidaTarantula, nil
 	}
-	return alertaErro, errors.New("Tipo de animal inválido")
+	return alertaErro, errors.New(" - O tipo de animal informado é inválido")
 }
 
 
@@ -58,22 +58,24 @@ func main() {
 	animalHamster, err := Animal(hamster)
 	animalTarantula, err := Animal(tarantula)
 
+	animalInvalido, err := Animal("macaco")
+	erro := animalInvalido(10)
+
 	if err != nil {
-		fmt.Println("Erro:", err)
-	} else {
+		fmt.Println("Houve um erro:", erro, err)
+	} 
 
-		quantComidaCachorro := animalCachorro(5)
-		quantComidaGato := animalGato(2)
-		quantComidaHamster := animalHamster(3)
-		quantComidaTarantula := animalTarantula(8)
+	quantComidaCachorro := animalCachorro(5)
+	quantComidaGato := animalGato(2)
+	quantComidaHamster := animalHamster(3)
+	quantComidaTarantula := animalTarantula(8)
 
-		quantTotalKilos := quantComidaCachorro + quantComidaGato + quantComidaHamster + quantComidaTarantula
+	quantTotalKilos := quantComidaCachorro + quantComidaGato + quantComidaHamster + quantComidaTarantula
 
-		fmt.Printf("Quantidade comida cachorro em Kg: %.3f\n", quantComidaCachorro)
-		fmt.Printf("Quantidade comida gato em Kg: %.3f\n", quantComidaGato)
-		fmt.Printf("Quantidade comida hasmter em Kg: %.3f\n", quantComidaHamster)
-		fmt.Printf("Quantidade comida tarantula em Kg: %.3f\n", quantComidaTarantula)
-		fmt.Printf("TOTAL em Kg: %.3f\n", quantTotalKilos)
-	}
+	fmt.Printf("Quantidade comida cachorro: %.3fKg\n", quantComidaCachorro)
+	fmt.Printf("Quantidade comida gato: %.3fKg\n", quantComidaGato)
+	fmt.Printf("Quantidade comida hasmter: %.3fKg\n", quantComidaHamster)
+	fmt.Printf("Quantidade comida tarantula: %.3fKg\n", quantComidaTarantula)
+	fmt.Printf("TOTAL: %.3fKg\n", quantTotalKilos)
 
 }
