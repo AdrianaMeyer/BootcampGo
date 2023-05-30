@@ -41,17 +41,13 @@ func (u *usuario) adicionarProduto(p produto, quant int) {
 	u.produtos = append(u.produtos, p)
 }
 
-func (u *usuario) excluirProduto(p produto) {
-	for i, prod := range u.produtos {
-		if prod == p {
-			u.produtos = append(u.produtos[:i], u.produtos[i+1:]...)
-			break
-		}
-	}
+func (u *usuario) excluirProduto() {
+	u.produtos = nil
 }
 
 func main() {
 
+	println("------- PRODUTOS CRIADOS -------")
 	produto1:= novoProduto("cafeteira", 129.90)
 	fmt.Println(produto1)
 
@@ -61,9 +57,11 @@ func main() {
 	produto3:= novoProduto("tenis", 340.00)
 	fmt.Println(produto3)
 
+	println("------- USUARIO CRIADO -------")
 	usuario1:= novoUsuario("Maria", "Silva", "maria.silva@email.com")
 	fmt.Println(usuario1)
 
+	println("------- ADICIONANDO PRODUTOS -------")
 	usuario1.adicionarProduto(produto1, 32)
 	fmt.Println(usuario1)
 
@@ -73,7 +71,7 @@ func main() {
 	usuario1.adicionarProduto(produto3, 2)
 	fmt.Println(usuario1)
 
-	//AJUSTAR A FUNCAO DE EXCLUIR
-	usuario1.excluirProduto(produto2)
+	println("------- EXCLUINDO PRODUTOS -------")
+	usuario1.excluirProduto()
 	fmt.Println(usuario1)
 }
