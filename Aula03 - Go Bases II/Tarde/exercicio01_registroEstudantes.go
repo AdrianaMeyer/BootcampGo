@@ -12,7 +12,7 @@ type Aluno struct {
 
 }
 
-func (aluno Aluno) detalhes() {
+func (aluno *Aluno) detalhes() {
 	fmt.Println("--------- Dados do Aluno ------- \t")
 	fmt.Println("Nome:", aluno.nome)
 	fmt.Println("Sobrenome:", aluno.sobrenome)  
