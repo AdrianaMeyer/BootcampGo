@@ -30,6 +30,14 @@ func main() {
 
 	fmt.Println("Array ordenado. Tempo de execucao: ", duracao)
 
+	fmt.Println("---- Ordenacao por Grupo ----")
+	inicio = time.Now()
+	ordenaBubbleSort(array1)
+	fim = time.Now()
+	duracao = fim.Sub(inicio)
+
+	fmt.Println("Array ordenado. Tempo de execucao: ", duracao)
+
 
 	fmt.Printf("\nARRAY DE 1000 ELEMENTOS\n")
 
@@ -49,6 +57,13 @@ func main() {
 
 	fmt.Println("Array ordenado. Tempo de execucao: ", duracao)
 
+	fmt.Println("---- Ordenacao por Grupo ----")
+	inicio = time.Now()
+	ordenaBubbleSort(array2)
+	fim = time.Now()
+	duracao = fim.Sub(inicio)
+
+	fmt.Println("Array ordenado. Tempo de execucao: ", duracao)
 
 	fmt.Printf("\nARRAY DE 10000 ELEMENTOS\n")
 
@@ -68,8 +83,14 @@ func main() {
 
 	fmt.Println("Array ordenado. Tempo de execucao: ", duracao)
 
+	fmt.Println("---- Ordenacao por Grupo ----")
+	inicio = time.Now()
+	ordenaBubbleSort(array3)
+	fim = time.Now()
+	duracao = fim.Sub(inicio)
 
-	//TODO: IMPLEMENTAR ORDENACAO POR GRUPO
+	fmt.Println("Array ordenado. Tempo de execucao: ", duracao)
+
 
 }
 
@@ -99,5 +120,19 @@ func ordenaSelecao(array []int) {
 		}
 
 		array[i], array[minIndex] = array[minIndex], array[i]
+	}
+}
+
+func ordenaBubbleSort(array []int) {
+	n := len(array)
+
+	for i := 0; i < n-1; i++ {
+
+		for j := 0; j < n-i-1; j++ {
+
+			if array[j] > array[j+1] {
+				array[j], array[j+1] = array[j+1], array[j]
+			}
+		}
 	}
 }
