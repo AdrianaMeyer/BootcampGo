@@ -11,8 +11,9 @@ func main() {
 
 	group := router.Group("/")
 	{
-		group.GET("/ola", exibirInfos.Ola)
+		group.GET("/Ola", exibirInfos.Ola)
 		group.GET("/users", exibirInfos.GetAll)
+		group.GET("/users/:Id", exibirInfos.GetById)
 	}
 	router.Run()
 
