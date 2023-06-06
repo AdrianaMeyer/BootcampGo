@@ -64,7 +64,7 @@
         "nome": "Carolina",
         "sobrenome": "Lima",
         "email": "carolina.lima@email.com",
-        "idade": 31,
+        "idade": 30,
         "altura": 1.68,
         "ativo": false,
         "dataDeCriacao": "14/06/1992"
@@ -75,19 +75,19 @@
         "sobrenome": "Rodrigues",
         "email": "fernando.rodrigues@email.com",
         "idade": 29,
-        "altura": 1.80,
+        "altura": 1.78,
         "ativo": true,
         "dataDeCriacao": "25/12/1994"
     },
     {
         "id": 9,
-        "nome": "Mariana",
+        "nome": "Paula",
         "sobrenome": "Almeida",
-        "email": "mariana.almeida@email.com",
+        "email": "paula.almeida@email.com",
         "idade": 26,
         "altura": 1.63,
         "ativo": true,
-        "dataDeCriacao": "08/03/1997"
+        "dataDeCriacao": "17/09/1998"
     },
     {
         "id": 10,
@@ -98,7 +98,18 @@
         "altura": 1.78,
         "ativo": true,
         "dataDeCriacao": "17/09/1998"
+    },
+    {
+        "id": 11,
+        "nome": "Gabriel",
+        "sobrenome": "Silva",
+        "email": "gabriel.silva@email.com",
+        "idade": 24,
+        "altura": 1.78,
+        "ativo": true,
+        "dataDeCriacao": "17/09/1998"
     }
+
 ]
 
    

@@ -87,3 +87,60 @@ func GetById(c *gin.Context) {
 }
 	
 
+func GetByQuery(c *gin.Context){
+	nome := c.Query("nome")
+	sobrenome := c.Query("sobrenome")
+	email := c.Query("email")
+	idade := c.Query("idade")
+	altura := c.Query("altura")
+	ativo := c.Query("ativo")
+	dataCriacao := c.Query("dataCriacao")
+	var usersFilter []Users
+	
+	err := leDadosJson(c)
+	
+	if err != nil {
+		log.Println(err)
+	} 
+
+	for _, user := range users {
+
+		if user.Nome == nome {
+			usersFilter = append(usersFilter, user)
+		}
+
+		if user.Sobrenome == sobrenome {
+			usersFilter = append(usersFilter, user)
+		}
+
+		if user.Email == email {
+			usersFilter = append(usersFilter, user)
+		}
+
+		if strconv.Itoa(user.Idade) == idade {
+			usersFilter = append(usersFilter, user)
+		}
+
+		if strconv.FormatFloat(user.Altura, 'f', -1, 64) == altura {
+			usersFilter = append(usersFilter, user)
+		}
+
+		if strconv.FormatBool(user.Ativo) == ativo {
+			usersFilter = append(usersFilter, user)
+		}
+
+		if user.DataDeCriacao == dataCriacao {
+			usersFilter = append(usersFilter, user)
+		}
+
+	}
+
+	if len(usersFilter) > 0 {
+		c.JSON(http.StatusOK, usersFilter)
+		return
+	} else {
+		c.JSON(http.StatusNotFound, gin.H{"error": "Usuário não encontrado"})
+	}
+	
+	
+}
