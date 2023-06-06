@@ -2,7 +2,7 @@ package main
 
 import (
 	"github.com/gin-gonic/gin"
-	"github.com/AdrianaMeyer/BootcampGo/exibirInfos"
+	"github.com/AdrianaMeyer/BootcampGo/requisicoes"
 )
 
 func main() {
@@ -11,10 +11,12 @@ func main() {
 
 	group := router.Group("/")
 	{
-		group.GET("/", exibirInfos.GetByQuery)
-		group.GET("/Ola", exibirInfos.Ola)
-		group.GET("/users", exibirInfos.GetAll)
-		group.GET("/users/:Id", exibirInfos.GetById)
+		group.GET("/", requisicoes.GetByQuery)
+		group.GET("/Ola", requisicoes.Ola)
+		group.GET("/users", requisicoes.GetAll)
+		group.GET("/users/:Id", requisicoes.GetById)
+
+		group.POST("/salvar", requisicoes.SaveUser())
 	}
 	router.Run()
 
