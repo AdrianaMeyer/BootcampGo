@@ -6,7 +6,7 @@
         "email": "paula_fernandes@email.com",
         "idade": 25,
         "altura": 1.65,
-        "ativo": true,
+        "ativo": "ativo",
         "dataDeCriacao": "12/04/2002"
     },
     {
@@ -16,7 +16,7 @@
         "email": "lucas_silva@email.com",
         "idade": 30,
         "altura": 1.78,
-        "ativo": true,
+        "ativo": "inativo",
         "dataDeCriacao": "05/09/1993"
     },
     {
@@ -26,7 +26,7 @@
         "email": "juliana.souza@email.com",
         "idade": 28,
         "altura": 1.72,
-        "ativo": true,
+        "ativo": "ativo",
         "dataDeCriacao": "19/11/1995"
     },
     {
@@ -36,7 +36,7 @@
         "email": "rafael.oliveira@email.com",
         "idade": 32,
         "altura": 1.85,
-        "ativo": false,
+        "ativo": "inativo",
         "dataDeCriacao": "02/07/1989"
     },
     {
@@ -46,7 +46,7 @@
         "email": "ana_santos@email.com",
         "idade": 23,
         "altura": 1.60,
-        "ativo": true,
+        "ativo": "ativo",
         "dataDeCriacao": "10/02/2000"
     },
     {
@@ -56,7 +56,7 @@
         "email": "pedro.gomes@email.com",
         "idade": 27,
         "altura": 1.75,
-        "ativo": true,
+        "ativo": "ativo",
         "dataDeCriacao": "30/09/1996"
     },
     {
@@ -66,7 +66,7 @@
         "email": "carolina.lima@email.com",
         "idade": 30,
         "altura": 1.68,
-        "ativo": false,
+        "ativo": "ativo",
         "dataDeCriacao": "14/06/1992"
     },
     {
@@ -76,7 +76,7 @@
         "email": "fernando.rodrigues@email.com",
         "idade": 29,
         "altura": 1.78,
-        "ativo": true,
+        "ativo": "ativo",
         "dataDeCriacao": "25/12/1994"
     },
     {
@@ -86,7 +86,7 @@
         "email": "paula.almeida@email.com",
         "idade": 26,
         "altura": 1.63,
-        "ativo": true,
+        "ativo": "ativo",
         "dataDeCriacao": "17/09/1998"
     },
     {
@@ -96,7 +96,7 @@
         "email": "gabriel.martins@email.com",
         "idade": 24,
         "altura": 1.78,
-        "ativo": true,
+        "ativo": "inativo",
         "dataDeCriacao": "17/09/1998"
     },
     {
@@ -106,7 +106,7 @@
         "email": "gabriel.silva@email.com",
         "idade": 24,
         "altura": 1.78,
-        "ativo": true,
+        "ativo": "ativo",
         "dataDeCriacao": "17/09/1998"
     }
 

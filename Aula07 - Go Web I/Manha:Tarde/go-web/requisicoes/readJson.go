@@ -4,13 +4,13 @@ import (
 	"net/http"
 	"github.com/gin-gonic/gin"
 	"encoding/json"
-	"io/ioutil"
+	"os"
 	"fmt"
 
 )
 
 func LeDadosJson(c *gin.Context) error {
-	data, err := ioutil.ReadFile("users.json")
+	data, err := os.ReadFile("users.json")
 	
 	if err != nil {
 		c.JSON(http.StatusNotFound, gin.H{"error": "Erro ao ler o arquivo JSON"})

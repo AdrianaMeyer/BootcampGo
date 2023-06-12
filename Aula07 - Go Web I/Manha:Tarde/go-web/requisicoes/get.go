@@ -54,52 +54,48 @@ func GetByQuery(c *gin.Context){
 	altura := c.Query("altura")
 	ativo := c.Query("ativo")
 	dataCriacao := c.Query("dataCriacao")
-	var usersFilter []Users
 	
 	err := LeDadosJson(c)
-	
 	if err != nil {
 		log.Println(err)
 	} 
 
+	resultado := []Users{}
+
 	for _, user := range users {
+    if nome != "" && user.Nome != nome {
+        continue
+    }
+    if sobrenome != "" && user.Sobrenome != sobrenome {
+        continue
+    }
+	if email != "" && user.Email != email {
+        continue
+    }
+	if sobrenome != "" && user.Sobrenome != sobrenome {
+        continue
+    }
+	if idade != "" && strconv.Itoa(user.Idade) != idade {
+        continue
+    }
+	if altura != "" && strconv.FormatFloat(user.Altura, 'f', -1, 64) != altura {
+        continue
+    }
+	if ativo != "" && user.Ativo != ativo {
+        continue
+    }
+	if dataCriacao != "" && user.DataDeCriacao != dataCriacao {
+        continue
+    }
 
-		if user.Nome == nome {
-			usersFilter = append(usersFilter, user)
-		}
-
-		if user.Sobrenome == sobrenome {
-			usersFilter = append(usersFilter, user)
-		}
-
-		if user.Email == email {
-			usersFilter = append(usersFilter, user)
-		}
-
-		if strconv.Itoa(user.Idade) == idade {
-			usersFilter = append(usersFilter, user)
-		}
-
-		if strconv.FormatFloat(user.Altura, 'f', -1, 64) == altura {
-			usersFilter = append(usersFilter, user)
-		}
-
-		if strconv.FormatBool(user.Ativo) == ativo {
-			usersFilter = append(usersFilter, user)
-		}
-
-		if user.DataDeCriacao == dataCriacao {
-			usersFilter = append(usersFilter, user)
-		}
-
+    resultado = append(resultado, user)
 	}
 
-	if len(usersFilter) > 0 {
-		c.JSON(http.StatusOK, usersFilter)
+	if len(resultado) > 0 {
+		c.JSON(http.StatusOK, resultado)
 		return
 	} else {
 		c.JSON(http.StatusNotFound, gin.H{"error": "Usuário não encontrado"})
 	}
-	
 	
 }

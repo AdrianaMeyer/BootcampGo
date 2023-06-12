@@ -7,7 +7,7 @@ type Users struct {
     Email 			string
 	Idade 			int
     Altura 			float64
-    Ativo 			bool
+    Ativo 			string
     DataDeCriacao 	string
 }
 
