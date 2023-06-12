@@ -41,6 +41,10 @@ func SaveUser() gin.HandlerFunc {
 		req.Id = lastID
 		users = append(users, req)
 
+	    if err != nil {
+		fmt.Println("Erro ao salvar as informacoes no arquivo", err)
+	    }
+
 		c.JSON(http.StatusCreated, users)
 	}
 }
@@ -87,6 +91,10 @@ func validateFields(req Users) []string {
 
     if req.Ativo == "" {
 		emptyfields = append(emptyfields, "Ativo")
+	}
+
+	if req.DataDeCriacao == "" {
+		emptyfields = append(emptyfields, "Data de Criação")
 	}
 
 	if len(emptyfields) != 0 {

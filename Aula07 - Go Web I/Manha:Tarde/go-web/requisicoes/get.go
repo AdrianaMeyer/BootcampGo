@@ -9,6 +9,13 @@ import (
 )
 
 func GetAll(c *gin.Context) {
+	token := c.GetHeader("token")
+	if token != "123456" {
+		c.JSON(http.StatusUnauthorized, gin.H{
+			"Error": "Token inválido - você não tem permissao para fazer esta solicitação",
+		})
+		return
+	}
 	err := LeDadosJson(c)
 
 	if err != nil {
@@ -19,6 +26,14 @@ func GetAll(c *gin.Context) {
 }
 
 func GetById(c *gin.Context) {
+	token := c.GetHeader("token")
+	if token != "123456" {
+		c.JSON(http.StatusUnauthorized, gin.H{
+			"Error": "Token inválido - você não tem permissao para fazer esta solicitação",
+		})
+		return
+	}
+
 	err := LeDadosJson(c)
 	
 	if err != nil {
@@ -47,6 +62,14 @@ func GetById(c *gin.Context) {
 	
 
 func GetByQuery(c *gin.Context){
+	token := c.GetHeader("token")
+	if token != "123456" {
+		c.JSON(http.StatusUnauthorized, gin.H{
+			"Error": "Token inválido - você não tem permissao para fazer esta solicitação",
+		})
+		return
+	}
+
 	nome := c.Query("nome")
 	sobrenome := c.Query("sobrenome")
 	email := c.Query("email")
