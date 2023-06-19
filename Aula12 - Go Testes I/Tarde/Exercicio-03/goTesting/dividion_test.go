@@ -19,5 +19,5 @@ func TestDivisionWithZero(t *testing.T) {
 	_, err := goTesting.Division(10, 0)
 	expectedResult := errors.New("O denominador não pode ser 0")
 
-	assert.Equal(t, err, expectedResult, "o resultado esperado e o resultado devem ser iguais")
+	assert.Equal(t, expectedResult, err, "o resultado esperado e o resultado devem ser iguais")
 }
