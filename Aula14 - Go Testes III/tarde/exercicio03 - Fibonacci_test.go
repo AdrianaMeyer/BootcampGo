@@ -10,7 +10,7 @@ func TestFibonacci(t *testing.T){
 	tests := []struct {
 		arg  int
 		expectedResult int
-	}{{2, 1}, {6, 8}, {10, 55}, {30, 832040}}
+	}{{-2,-2}, {2, 1}, {6, 8}, {10, 55}, {30, 832040}}
 
 	for i, test := range tests {
 		result := calc.Fibonacci(test.arg)
